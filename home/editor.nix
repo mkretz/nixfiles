@@ -19,6 +19,7 @@
       };
       language = [
         { name = "bash"; auto-format = true; formatter = { command = "${pkgs.shfmt}/bin/shfmt"; }; }
+        { name = "c-sharp"; auto-format = true; }
         { name = "css"; formatter = { command = "${pkgs.nodePackages.prettier}/bin/prettier"; args = [ "--parser" "css" ]; }; }
         { name = "html"; formatter = { command = "${pkgs.nodePackages.prettier}/bin/prettier"; args = [ "--parser" "html" ]; }; }
         { name = "javascript"; auto-format = true; formatter = { command = "${pkgs.nodePackages.prettier}/bin/prettier"; args = [ "--parser" "typescript" ]; }; }
@@ -43,6 +44,7 @@
     nodePackages.svelte-language-server
     nodePackages.typescript-language-server
     nodePackages.yaml-language-server
+    omnisharp-roslyn
     python311Packages.python-lsp-server
     rust-analyzer
     terraform-ls

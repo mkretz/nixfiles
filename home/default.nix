@@ -1,19 +1,23 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
-    ./window-manager.nix
     ./terminal.nix
     ./editor.nix
-    ./tools.nix
+    # ./tools.nix
     ./upgrade-diff.nix
   ];
+
+  nix = {
+    package = pkgs.nix;
+    settings.experimental-features = [ "nix-command" "flakes" ];
+  };
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnfreePredicate = _: true;
 
-  home.username = "lena";
-  home.homeDirectory = "/home/${config.home.username}";
+  home.username = "mathiskretz";
+  home.homeDirectory = "/Users/${config.home.username}";
 
   home.stateVersion = "23.11";
 

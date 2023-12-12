@@ -6,7 +6,7 @@
     f = "br";
     g = "${pkgs.gitui}/bin/gitui";
     t = "${pkgs.taskwarrior}/bin/task";
-    o = "${pkgs.xdg-utils}/bin/xdg-open";
+    o = "open";
     ".." = "cd ..";
     "..." = "cd ../..";
   };
@@ -78,12 +78,6 @@
       localVariables = {
         HISTORY_SUBSTRING_SEARCH_PREFIXED = "true";
       };
-      loginExtra = ''
-        # Start window manager
-        if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-          exec ${pkgs.hyprland}/bin/Hyprland
-        fi
-      '';
       initExtra = ''
         source ${config.xdg.configHome}/zsh/*
         if [[ $(tty) != /dev/tty[0-9] ]]; then
@@ -123,6 +117,9 @@
         set-option -g pane-border-style 'fg=#3b4261'
         set-option -g pane-active-border-style 'fg=#3b4261'
         set-option -g message-command-style 'fg=#7aa2f7,bg=#3b4261'
+
+		# https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard
+		set-option -g default-command "reattach-to-user-namespace -l $SHELL"
       '';
     };
 
@@ -192,11 +189,8 @@
       pacu() {
         pushd ${config.home.homeDirectory}/.nixfiles
         ${pkgs.gnumake}/bin/make update
-        ${pkgs.gnumake}/bin/make system
         ${pkgs.gnumake}/bin/make home
         popd
-        ${pkgs.fwupd}/bin/fwupdmgr refresh
-        ${pkgs.fwupd}/bin/fwupdmgr update
       }
 
       # Update project dependencies
