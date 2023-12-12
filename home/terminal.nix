@@ -42,6 +42,9 @@
         set-option -g pane-border-style 'fg=#3b4261'
         set-option -g pane-active-border-style 'fg=#3b4261'
         set-option -g message-command-style 'fg=#7aa2f7,bg=#3b4261'
+
+	# https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard
+	set-option -g default-command "reattach-to-user-namespace -l $SHELL"
       '';
     };
   };

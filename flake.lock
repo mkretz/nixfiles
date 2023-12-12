@@ -1,5 +1,6 @@
 {
   "nodes": {
+<<<<<<< HEAD
     "crane": {
       "locked": {
         "lastModified": 1731098351,
@@ -74,6 +75,8 @@
         "type": "github"
       }
     },
+=======
+>>>>>>> a63981d (Add changes for my mac)
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -94,6 +97,7 @@
         "type": "github"
       }
     },
+<<<<<<< HEAD
     "lanzaboote": {
       "inputs": {
         "crane": "crane",
@@ -135,6 +139,8 @@
         "type": "github"
       }
     },
+=======
+>>>>>>> a63981d (Add changes for my mac)
     "nixpkgs": {
       "locked": {
         "lastModified": 1755186698,
@@ -151,6 +157,7 @@
         "type": "github"
       }
     },
+<<<<<<< HEAD
     "nixpkgs-stable": {
       "locked": {
         "lastModified": 1730741070,
@@ -222,6 +229,13 @@
         "repo": "rust-overlay",
         "type": "github"
       }
+=======
+    "root": {
+      "inputs": {
+        "home-manager": "home-manager",
+        "nixpkgs": "nixpkgs"
+      }
+>>>>>>> a63981d (Add changes for my mac)
     }
   },
   "root": "root",
