@@ -12,6 +12,7 @@
       };
       settings = {
         window_padding_width = 5;
+        hide_window_decorations = true;
       };
     };
 
@@ -42,6 +43,9 @@
           set-option -g window-status-current-style 'fg=#${theme.colors.background},bg=#${theme.colors.primary},bold'
           set-option -g pane-border-style 'fg=#${theme.colors.backgroundLight}'
           set-option -g pane-active-border-style 'fg=#${theme.colors.backgroundLight}'
+          	
+          # https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard
+          set-option -g default-command "reattach-to-user-namespace -l $SHELL"
         '';
     };
   };

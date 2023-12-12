@@ -9,10 +9,8 @@
     f = "${pkgs.yazi}/bin/yazi";
     g = "${pkgs.gitui}/bin/gitui";
     m = "${pkgs.bottom}/bin/btm";
-    o = "${pkgs.xdg-utils}/bin/xdg-open";
+    o = "open";
     t = "${pkgs.taskwarrior3}/bin/task";
-    do-not-disturb = "${pkgs.mako}/bin/makoctl mode -a do-not-disturb && pkill -RTMIN+2 waybar";
-    do-disturb = "${pkgs.mako}/bin/makoctl mode -r do-not-disturb && pkill -RTMIN+2 waybar";
   };
 
   programs = {
@@ -33,15 +31,6 @@
         searchDownKey = "^N";
         searchUpKey = "^P";
       };
-      localVariables = {
-        HISTORY_SUBSTRING_SEARCH_PREFIXED = "true";
-      };
-      loginExtra = # shell
-        ''
-          if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-            exec ${pkgs.hyprland}/bin/start-hyprland
-          fi
-        '';
       initContent = # shell
         ''
           source ${config.xdg.configHome}/zsh/*

@@ -16,14 +16,10 @@
     # Git
     git = {
       enable = true;
-      signing = {
-        key = null;
-        signByDefault = true;
-      };
       settings = {
         user = {
-          name = "Lena Fuhrimann";
-          email = "6780471+cloudlena@users.noreply.github.com";
+          name = "Mathis Kretz";
+          email = "mkretz@users.noreply.github.com";
         };
       };
     };
@@ -57,17 +53,6 @@
     # System information tool
     fastfetch.enable = true;
 
-    # Screenshot annotation tool
-    satty = {
-      enable = true;
-      settings = {
-        general = {
-          early-exit = true;
-          initial-tool = "brush";
-        };
-      };
-    };
-
     # Agentic coding tool
     claude-code.enable = true;
 
@@ -92,33 +77,11 @@
     # Quick navigation
     zoxide.enable = true;
 
-    # Password manager
-    browserpass = {
-      enable = true;
-      browsers = [ "brave" ];
-    };
-
     # JSON parser
     jq.enable = true;
 
-    # PDF viewer
-    zathura.enable = true;
-
-    # Task manager
-    taskwarrior = {
-      enable = true;
-      package = pkgs.taskwarrior3;
-      colorTheme = "dark-violets-256";
-    };
-
-    # Media player
-    mpv.enable = true;
-
     # GitHub CLI
     gh.enable = true;
-
-    # Image viewer
-    imv.enable = true;
 
     # Simplified man pages
     tealdeer = {
@@ -143,103 +106,46 @@
 
   home.packages = with pkgs; [
     air
-    altair
-    bluetui
     brave
     cargo
+    claude-code
     clippy
     dig
     dust
     file
     fx
-    gcc
-    gimp3
-    gnumake
     golangci-lint
-    gopass
+    google-cloud-sdk
     hugo
     image_optim
     inkscape
-    killall
-    kooha
     kubectl
     kubectx
-    libreoffice
     libwebp
     lolcat
     moq
     onefetch
     opentofu
-    orca-slicer
+    optipng
+    podman
     podman-compose
     presenterm
     pwgen
     python3
-    qrencode
-    quickemu
     rustc
     shellcheck
     signal-desktop
     tflint
     timewarrior
-    traceroute
     tree
     unzip
-    usbutils
+    typst
+    upterm
+    vfkit
     whois
-    wiremix
-    wl-clipboard
-    xdg-utils
     yq-go
     zip
   ];
 
-  xdg = {
-    enable = true;
-    configFile = {
-      "gopass/config".text = # ini
-        ''
-          [core]
-          	notifications = false
-          	showsafecontent = true
-          [mounts]
-          	path = ${config.home.homeDirectory}/.password-store
-        '';
-    };
-    dataFile = {
-      "task/hooks/on-modify.timewarrior" = {
-        source = "${pkgs.timewarrior}/share/doc/timew/ext/on-modify.timewarrior";
-        executable = true;
-      };
-      "task/hooks/on-exit.waybar" = {
-        source = pkgs.writeShellScript "task-hook-waybar" ''
-          pkill -RTMIN+1 waybar || true
-        '';
-        executable = true;
-      };
-    };
-    mimeApps = {
-      enable = true;
-      defaultApplications = {
-        "application/pdf" = [ "org.pwmt.zathura.desktop" ];
-        "image/png" = [ "imv.desktop" ];
-        "image/jpeg" = [ "imv.desktop" ];
-        "image/svg+xml" = [ "imv.desktop" ];
-      };
-    };
-    desktopEntries = {
-      spotify = {
-        name = "Spotify";
-        genericName = "Music Player";
-        icon = "${config.gtk.iconTheme.package}/share/icons/${theme.icons}/32x32/apps/spotify.svg";
-        exec = "brave --app=https://open.spotify.com/";
-        categories = [
-          "AudioVideo"
-          "Audio"
-          "Player"
-        ];
-      };
-    };
-  };
   home.preferXdgDirectories = true;
 }

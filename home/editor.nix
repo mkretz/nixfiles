@@ -31,6 +31,17 @@ in
       };
       language = [
         {
+          name = "astro";
+          auto-format = true;
+          formatter = {
+            command = "${pkgs.prettier}/bin/prettier";
+            args = [
+              "--parser"
+              "astro"
+            ];
+          };
+        }
+        {
           name = "bash";
           auto-format = true;
           formatter = {

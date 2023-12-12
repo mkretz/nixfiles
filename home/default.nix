@@ -2,8 +2,7 @@
 
 {
   imports = [
-    ./window-manager.nix
-    ./status-bar.nix
+    ./fonts.nix
     ./terminal.nix
     ./shell.nix
     ./editor.nix
@@ -13,8 +12,8 @@
   # Pass theme to all imported modules
   _module.args.theme = import ./theme.nix;
 
-  home.username = "lena";
-  home.homeDirectory = "/home/${config.home.username}";
+  home.username = "mathiskretz";
+  home.homeDirectory = "/Users/${config.home.username}";
 
   home.stateVersion = "26.11";
 
