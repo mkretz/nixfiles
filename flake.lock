@@ -84,11 +84,19 @@
         ]
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1755625756,
         "narHash": "sha256-t57ayMEdV9g1aCfHzoQjHj1Fh3LDeyblceADm2hsLHM=",
         "owner": "nix-community",
         "repo": "home-manager",
         "rev": "dd026d86420781e84d0732f2fa28e1c051117b59",
+=======
+        "lastModified": 1710401383,
+        "narHash": "sha256-jskq7uDpKXrRoY4hDpNqykmSSKHUXYlo7ZFc/se7fus=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "1ab3cec3a1bbb065b2d52b913d1431366028d5b5",
+>>>>>>> 1a00d4d (Add initial macos config)
         "type": "github"
       },
       "original": {
@@ -143,11 +151,19 @@
 >>>>>>> a63981d (Add changes for my mac)
     "nixpkgs": {
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1755186698,
         "narHash": "sha256-wNO3+Ks2jZJ4nTHMuks+cxAiVBGNuEBXsT29Bz6HASo=",
         "owner": "NixOS",
         "repo": "nixpkgs",
         "rev": "fbcf476f790d8a217c3eab4e12033dc4a0f6d23c",
+=======
+        "lastModified": 1710272261,
+        "narHash": "sha256-g0bDwXFmTE7uGDOs9HcJsfLFhH7fOsASbAuOzDC+fhQ=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "0ad13a6833440b8e238947e47bea7f11071dc2b2",
+>>>>>>> 1a00d4d (Add initial macos config)
         "type": "github"
       },
       "original": {

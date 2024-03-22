@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./fonts.nix
     ./terminal.nix
     ./shell.nix
     ./editor.nix
