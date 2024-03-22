@@ -44,6 +44,7 @@
     nodePackages.svelte-language-server
     nodePackages.typescript-language-server
     nodePackages.yaml-language-server
+    dotnet-sdk_7
     omnisharp-roslyn
     python311Packages.python-lsp-server
     rust-analyzer

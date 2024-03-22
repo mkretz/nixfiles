@@ -5,8 +5,8 @@
     # Git
     git = {
       enable = true;
-      userName = "Lena Fuhrimann";
-      userEmail = "6780471+cloudlena@users.noreply.github.com";
+      userName = "Mathis Kretz";
+      userEmail = "2479543+mkretz@users.noreply.github.com";
       signing = {
         key = null;
         signByDefault = true;
@@ -71,11 +71,6 @@
     };
   };
 
-  services = {
-    # GPG
-    gpg-agent.enable = true;
-  };
-
   home.packages = with pkgs; [
     altair
     awscli2
@@ -133,31 +128,4 @@
     yq
     zip
   ];
-
-  xdg = {
-    configFile = {
-      "gopass/config".text = ''
-        [core]
-        	notifications = false
-        	showsafecontent = true
-        [mounts]
-        	path = ${config.home.homeDirectory}/.password-store
-      '';
-    };
-    dataFile = {
-      "task/hooks/on-modify.timewarrior" = {
-        source = "${pkgs.timewarrior}/share/doc/timew/ext/on-modify.timewarrior";
-        executable = true;
-      };
-    };
-    mimeApps = {
-      enable = true;
-      defaultApplications = {
-        "application/pdf" = [ "org.pwmt.zathura.desktop" ];
-        "image/png" = [ "imv.desktop" ];
-        "image/jpeg" = [ "imv.desktop" ];
-        "image/svg" = [ "imv.desktop" ];
-      };
-    };
-  };
 }

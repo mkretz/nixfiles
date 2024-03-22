@@ -17,6 +17,7 @@
       enable = true;
       settings = {
         window = {
+          decorations = "None";
           padding = {
             x = 5;
             y = 5;
@@ -70,14 +71,7 @@
         zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
       '';
       history.ignoreAllDups = true;
-      historySubstringSearch = {
-        enable = true;
-        searchDownKey = "^N";
-        searchUpKey = "^P";
-      };
-      localVariables = {
-        HISTORY_SUBSTRING_SEARCH_PREFIXED = "true";
-      };
+      historySubstringSearch.enable = true;
       initExtra = ''
         source ${config.xdg.configHome}/zsh/*
         if [[ $(tty) != /dev/tty[0-9] ]]; then
@@ -96,30 +90,30 @@
       escapeTime = 10;
       terminal = "tmux-256color";
       extraConfig = ''
-        # Set correct terminal
-        set-option -sa terminal-features ',alacritty:RGB'
+                # Set correct terminal
+                set-option -sa terminal-features ',alacritty:RGB'
 
-        # Open new splits from current directory
-        bind '"' split-window -v -c '#{pane_current_path}'
-        bind % split-window -h -c '#{pane_current_path}'
+                # Open new splits from current directory
+                bind '"' split-window -v -c '#{pane_current_path}'
+                bind % split-window -h -c '#{pane_current_path}'
 
-        # Unclutter status bar
-        set-option -g status-right ""
-        set-option -g status-left ""
-        set-window-option -g window-status-format " #I: #W "
-        set-window-option -g window-status-current-format " #I: #W "
+                # Unclutter status bar
+                set-option -g status-right ""
+                set-option -g status-left ""
+                set-window-option -g window-status-format " #I: #W "
+                set-window-option -g window-status-current-format " #I: #W "
 
-        # Color scheme
-        set-option -g status-style 'fg=#414868'
-        set-option -g window-status-current-style 'fg=#1a1b26,bg=#414868,bold'
-        set-option -g mode-style 'fg=#7aa2f7,bg=#3b4261'
-        set-option -g message-style 'fg=#7aa2f7,bg=#3b4261'
-        set-option -g pane-border-style 'fg=#3b4261'
-        set-option -g pane-active-border-style 'fg=#3b4261'
-        set-option -g message-command-style 'fg=#7aa2f7,bg=#3b4261'
+                # Color scheme
+                set-option -g status-style 'fg=#414868'
+                set-option -g window-status-current-style 'fg=#1a1b26,bg=#414868,bold'
+                set-option -g mode-style 'fg=#7aa2f7,bg=#3b4261'
+                set-option -g message-style 'fg=#7aa2f7,bg=#3b4261'
+                set-option -g pane-border-style 'fg=#3b4261'
+                set-option -g pane-active-border-style 'fg=#3b4261'
+                set-option -g message-command-style 'fg=#7aa2f7,bg=#3b4261'
 
-		# https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard
-		set-option -g default-command "reattach-to-user-namespace -l $SHELL"
+        		# https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard
+        		set-option -g default-command "reattach-to-user-namespace -l $SHELL"
       '';
     };
 
@@ -129,6 +123,8 @@
       settings = {
         add_newline = false;
         aws.disabled = true;
+        azure.disabled = true;
+        gcloud.disabled = true;
         cmd_duration.disabled = true;
         package.disabled = true;
       };
@@ -186,7 +182,7 @@
       }
 
       # Update system
-      pacu() {
+      nixpacu() {
         pushd ${config.home.homeDirectory}/.nixfiles
         ${pkgs.gnumake}/bin/make update
         ${pkgs.gnumake}/bin/make home
