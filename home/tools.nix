@@ -79,9 +79,6 @@
     # GitHub CLI
     gh.enable = true;
 
-    # Image viewer
-    imv.enable = true;
-
     # AI CLI
     aichat.enable = true;
 
@@ -111,7 +108,6 @@
 
   home.packages = with pkgs; [
     air
-    altair
     brave
     cargo
     clippy
@@ -119,18 +115,12 @@
     dig
     dust
     fx
-    gcc
-    gimp3
-    gnumake
     golangci-lint
-    gopass
     hugo
     inkscape
     jpegoptim
-    kooha
     kubectl
     kubectx
-    libreoffice
     libwebp
     lolcat
     moq
@@ -140,23 +130,15 @@
     optipng
     podman-compose
     presenterm
-    pulsemixer
     pwgen
     python3
-    quickemu
     rustc
     shellcheck
-    signal-desktop
+    signal-desktop-bin
     tflint
     timewarrior
-    tree
-    unzip
     upterm
-    usbutils
     whois
-    wl-clipboard
-    xdg-utils
     yq
-    zip
   ];
 }

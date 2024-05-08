@@ -3,7 +3,7 @@
 {
   home.packages = with pkgs; [
     fira-mono
-    fira-code-nerdfont
+    nerd-fonts.fira-code
     lato
   ];
 }

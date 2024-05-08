@@ -34,12 +34,6 @@
       localVariables = {
         HISTORY_SUBSTRING_SEARCH_PREFIXED = "true";
       };
-      loginExtra = ''
-        # Start window manager
-        if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-          exec ${pkgs.hyprland}/bin/Hyprland
-        fi
-      '';
       initContent = ''
         source ${config.xdg.configHome}/zsh/*
         if [[ $(tty) != /dev/tty[0-9] ]]; then
