@@ -11,6 +11,7 @@
         soft-wrap.enable = true;
         cursor-shape.insert = "bar";
         file-picker.hidden = false;
+        true-color = true;
       };
     };
     languages = {
